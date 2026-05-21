@@ -3,6 +3,8 @@ import streamlit as st
 import snowflake.connector
 import pandas as pd
 import plotly.express as px
+from dotenv import load_dotenv
+load_dotenv()  # ← 이게 import 바로 다음에 있어야 해요
 
 @st.cache_resource
 def get_connection():
@@ -24,7 +26,7 @@ def load_data(query):
 st.set_page_config(page_title="서울 공공자전거 분석", layout="wide")
 st.title("🚲 서울 공공자전거 이용 분석")
 
-tab1, tab2, tab3 = st.tabs(["시간대별 이용 패턴", "사용자 특성 분석", "인기 대여소 순위"])
+tab1, tab2, tab3 = st.tabs(["시간대별 이용 패턴", "사용자 특성 분석", "인기 대여소 순위",])
 
 # 1. 시간대별 이용 패턴
 with tab1:
