@@ -134,7 +134,7 @@ Marts
 ---
 
 ##### Airflow DAG 그래프
-<img width="1281" height="400" alt="Image" src="https://github.com/user-attachments/assets/fea11c98-ec0b-4282-8926-c09492b618bf" />
+<img width="1281" height="872" alt="Image" src="https://github.com/user-attachments/assets/087523af-e227-4ee6-b9a8-c002cfea5d9c" />
 
 ##### Streamlit 결과
 <img width="1918" height="600" alt="Image" src="https://github.com/user-attachments/assets/75c1d6a3-efaf-40d7-8a4c-dcd5ca684027" />
@@ -146,3 +146,40 @@ Marts
 <img width="1910" height="441" alt="Image" src="https://github.com/user-attachments/assets/c67077fd-05e3-4f70-81a3-8848570b862a" />
 
 <img width="1915" height="634" alt="Image" src="https://github.com/user-attachments/assets/471de814-ba7d-4828-80be-3899e0790f98" />
+
+
+###  실행 방법
+
+#### 1. 환경 변수 설정
+```bash
+# .env.example을 복사해서 .env 파일 생성 후 Snowflake 계정 정보 입력
+cp .env.example .env
+```
+
+#### 2. dbt 설정
+```bash
+# profiles.yml.example을 복사해서 ~/.dbt/profiles.yml에 저장 후 계정 정보 입력 (.dbt 디렉토리 위치는 실사용자 디렉토리 아래 있습니다.)
+cp profiles.yml.example ~/.dbt/profiles.yml
+```
+
+#### 3. dbt 실행
+```bash
+dbt deps      # 패키지 설치
+dbt run       # 모델 실행
+dbt test      # 데이터 품질 테스트
+```
+
+#### 4. Airflow 실행
+```bash
+# Docker Desktop 실행 후
+cd airflow
+astro dev start
+# http://localhost:8080 접속 후 snowflake_conn Connection 설정
+```
+
+#### 5. Streamlit 실행
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+# http://localhost:8501 접속
+```
