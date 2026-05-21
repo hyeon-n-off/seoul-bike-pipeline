@@ -1,0 +1,13 @@
+seoul_bike:
+  outputs:
+    dev:
+      type: snowflake
+      account: YOUR_ACCOUNT
+      user: YOUR_USER
+      password: YOUR_PASSWORD
+      role: YOUR_ROLE
+      warehouse: YOUR_WAREHOUSE
+      database: YOUR_DATABASE
+      schema: YOUR_SCHEMA
+      threads: 4
+  target: dev

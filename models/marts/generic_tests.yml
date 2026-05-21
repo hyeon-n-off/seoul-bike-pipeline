@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: fct_station_ranking
+    columns:
+      - name: station_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_stations')
+                field: station_id

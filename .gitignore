@@ -1,0 +1,12 @@
+# 환경변수
+.env
+
+# dbt 관련
+profiles.yml
+target/
+dbt_packages/
+logs/
+
+# Python
+__pycache__/
+*.pyc

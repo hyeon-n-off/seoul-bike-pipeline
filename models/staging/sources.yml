@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: bike
+    database: BIKE_DATABASE
+    schema: PUBLIC
+    tables:
+      - name: RAW_BIKE_USAGE
+        columns:
+        - name: RENTAL_DATE
+          tests:
+            - not_null
+        - name: STATION_ID
+          tests:
+            - not_null
+        
